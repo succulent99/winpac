@@ -14,7 +14,18 @@ namespace winpac
         {
             if (!File.Exists("packagelist.txt"))
             {
-                Console.WriteLine("No package list was located.");
+                Console.WriteLine("No package list was located."); Console.WriteLine("Downloading Latest Package List...");
+                try
+                {
+                    File.Delete("packagelist.txt");
+                    var client = new WebClient();
+                    client.DownloadFile("https://winpac-mirror.succulent99.repl.co/packagelists/packagelist.txt", "packagelist.txt");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Package List Update Failed: " + ex);
+                }
+                Console.WriteLine("Package List Update Completed.");
                 Environment.Exit(1);
             }
             string[] packages = File.ReadAllLines("packagelist.txt");

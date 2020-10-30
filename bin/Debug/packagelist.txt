@@ -1,3 +1,4 @@
 vlc;https://plug-mirror.rcac.purdue.edu/vlc/vlc/3.0.11/win64/vlc-3.0.11-win64.exe
 notepad++;https://winpac-mirror.succulent99.repl.co/files/notepad++.exe
 steam;https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe
+mpc-hc;https://winpac-mirror.succulent99.repl.co/files/mpc-hc.exe
