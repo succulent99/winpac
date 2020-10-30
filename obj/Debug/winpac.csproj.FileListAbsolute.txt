@@ -1,0 +1,7 @@
+C:\Users\Lucas\Documents\Projects\WinPac\winpac\bin\Debug\winpac.exe.config
+C:\Users\Lucas\Documents\Projects\WinPac\winpac\bin\Debug\winpac.exe
+C:\Users\Lucas\Documents\Projects\WinPac\winpac\bin\Debug\winpac.pdb
+C:\Users\Lucas\Documents\Projects\WinPac\winpac\obj\Debug\winpac.csprojAssemblyReference.cache
+C:\Users\Lucas\Documents\Projects\WinPac\winpac\obj\Debug\winpac.csproj.CoreCompileInputs.cache
+C:\Users\Lucas\Documents\Projects\WinPac\winpac\obj\Debug\winpac.exe
+C:\Users\Lucas\Documents\Projects\WinPac\winpac\obj\Debug\winpac.pdb
