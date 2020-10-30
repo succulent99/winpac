@@ -9,7 +9,7 @@ WinPac is a simple, easy to use Windows CLI package manager. I came up with the 
 4: Press CTRL+B, or press the build button in visual studio.
 
 ## Running WinPac:
-1: Download the latest build package.
-2: Decompress the zip file, and place it in a good location.
-3: Open command prompt and locate the directory 
-4: Type any WinPac command, Such as: `winpac h`
+1. Download the latest build package.
+2. Decompress the zip file, and place it in a good location.
+3. Open command prompt and locate the directory
+4. Type any WinPac command, Such as: `winpac h`
