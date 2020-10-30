@@ -64,7 +64,18 @@ namespace winpac
                 }
                 if (args[0] == "u" || args[0] == "update")
                 {
-
+                    Console.WriteLine("Downloading Latest Package List...");
+                    try
+                    {
+                        File.Delete("packagelist.txt");
+                        var client = new WebClient();
+                        client.DownloadFile("https://winpac-mirror.succulent99.repl.co/packagelists/packagelist.txt", "packagelist.txt");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Package List Update Failed: " + ex);
+                    }
+                    Console.WriteLine("Package List Update Completed.");
                 }
                 if (args[0] == "l" || args[0] == "list")
                 {
