@@ -19,7 +19,7 @@ namespace winpac
                 {
                     File.Delete("packagelist.txt");
                     var client = new WebClient();
-                    client.DownloadFile("https://winpac-mirror.succulent99.repl.co/packagelists/packagelist.txt", "packagelist.txt");
+                    client.DownloadFile("https://winpac-mirror-main-1.succulent99.repl.co/packagelists/packagelist.txt", "packagelist.txt");
                 }
                 catch (Exception ex)
                 {
@@ -80,7 +80,7 @@ namespace winpac
                     {
                         File.Delete("packagelist.txt");
                         var client = new WebClient();
-                        client.DownloadFile("https://winpac-mirror.succulent99.repl.co/packagelists/packagelist.txt", "packagelist.txt");
+                        client.DownloadFile("https://winpac-mirror-main-1.succulent99.repl.co/packagelists/packagelist.txt", "packagelist.txt");
                     }
                     catch (Exception ex)
                     {
