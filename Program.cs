@@ -19,7 +19,7 @@ namespace winpac
                 {
                     File.Delete("packagelist.txt");
                     var client = new WebClient();
-                    client.DownloadFile("https://winpac-mirror-main-1.succulent99.repl.co/packagelists/packagelist.txt", "packagelist.txt");
+                    client.DownloadFile("https://winpac-mirror.succulent99.repl.co/packagelists/packagelist.txt", "packagelist.txt");
                 }
                 catch (Exception ex)
                 {
@@ -31,7 +31,7 @@ namespace winpac
             string[] packages = File.ReadAllLines("packagelist.txt");
             if (args.Length != 0)
             {
-                if (args[0] == "i" || args[0] == "install")
+                if (args[0] == "-i" || args[0] == "--install")
                 {
                     
                     if (args.Length == 1)
@@ -73,14 +73,14 @@ namespace winpac
                         }
                     }
                 }
-                if (args[0] == "u" || args[0] == "update")
+                if (args[0] == "-u" || args[0] == "--update")
                 {
                     Console.WriteLine("Downloading Latest Package List...");
                     try
                     {
                         File.Delete("packagelist.txt");
                         var client = new WebClient();
-                        client.DownloadFile("https://winpac-mirror-main-1.succulent99.repl.co/packagelists/packagelist.txt", "packagelist.txt");
+                        client.DownloadFile("https://winpac-mirror.succulent99.repl.co/packagelists/packagelist.txt", "packagelist.txt");
                     }
                     catch (Exception ex)
                     {
@@ -88,7 +88,7 @@ namespace winpac
                     }
                     Console.WriteLine("Package List Update Completed.");
                 }
-                if (args[0] == "l" || args[0] == "list")
+                if (args[0] == "-l" || args[0] == "--list")
                 {
                     for (int i = 0; i < packages.Length; i++)
                     {
@@ -96,16 +96,16 @@ namespace winpac
                         Console.WriteLine(currentPackage[0]);
                     }
                 }
-                if (args[0] == "v" || args[0] == "version")
+                if (args[0] == "-v" || args[0] == "--version")
                 {
                     Console.WriteLine("Version: v0.1\nBranch: Debug");
                 }
-                if (args[0] == "h" || args[0] == "help")
+                if (args[0] == "-h" || args[0] == "--help")
                 {
-                    Console.WriteLine("Thanks for trying out WinPac, Here are some commands:\nwinpac install: installs a specified package.\nwinpac help: brings you here.\nwinpac list: lists all packages.\nwinpac version: tells your what version you are using.");
+                    Console.WriteLine("Thanks for trying out WinPac, Here are some commands:\nwinpac --install: installs a specified package.\nwinpac --help: brings you here.\nwinpac --list: lists all packages.\nwinpac --version: tells your what version you are using.");
                 }
             }
-            else Console.WriteLine("Type `winpac help`, or `winpac h`");
+            else Console.WriteLine("Type `winpac --help`, or `winpac -h`");
         }
     }
 }

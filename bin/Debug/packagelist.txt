@@ -3,3 +3,13 @@ winrar;https://www.rarlab.com/rar/winrar-x64-591.exe
 vlc;https://plug-mirror.rcac.purdue.edu/vlc/vlc/3.0.11/win64/vlc-3.0.11-win64.exe
 virtualbox;https://download.virtualbox.org/virtualbox/6.1.16/VirtualBox-6.1.16-140961-Win.exe
 notepad++;https://winpac-mirror-main-1.succulent99.repl.co/files/notepad++.exe
+steam;https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe
+discord;https://discord-mirror.crazywillbear.repl.co/DiscordSetup.exe
+qbittorrent;https://downloads.sourceforge.net/project/qbittorrent/qbittorrent-win32/qbittorrent-4.3.0.1/qbittorrent_4.3.0.1_x64_setup.exe?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fqbittorrent%2Ffiles%2Fqbittorrent-win32%2Fqbittorrent-4.3.0.1%2Fqbittorrent_4.3.0.1_x64_setup.exe%2Fdownload&ts=1604167494
+firefox;https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=en-US
+chrome;https://www.google.com/chrome/thank-you.html?statcb=0&installdataindex=empty&defaultbrowser=0#
+githubdesktop;https://central.github.com/deployments/desktop/desktop/latest/win32
+tor;https://www.torproject.org/dist/torbrowser/10.0.2/torbrowser-install-win64-10.0.2_en-US.exe
+palemoon;https://www.palemoon.org/download.php?mirror=eu&bits=64&type=installer
+basiliskbrowser;https://us.basilisk-browser.org/release/basilisk-latest.win64.installer.exe
+obs;https://cdn-fastly.obsproject.com/downloads/OBS-Studio-26.0.2-Full-Installer-x64.exe
