@@ -50,21 +50,22 @@ namespace winpac
                             {
                                 Console.WriteLine("Package Located...");
                                 Console.WriteLine("Download Started...");
+                                string[] currentPackageName = currentPackage[0].Split('/');
 
                                 var client = new WebClient();
-                                client.DownloadFile(currentPackage[1], currentPackage[0] + ".exe");
+                                client.DownloadFile(currentPackage[1], currentPackageName[1] + ".exe");
 
                                 Console.WriteLine("Download Finished...");
                                 Console.WriteLine("Starting installer...");
                                 try
                                 {
-                                    System.Diagnostics.Process.Start(currentPackage[0] + ".exe").WaitForExit();
-                                    File.Delete(currentPackage[0] + ".exe");
+                                    System.Diagnostics.Process.Start(currentPackageName[1] + ".exe").WaitForExit();
+                                    File.Delete(currentPackageName[1] + ".exe");
                                 }
                                 catch (Exception ex)
                                 {
                                     Console.WriteLine("Install failed. Ex: " + ex);
-                                    File.Delete(currentPackage[0] + ".exe");
+                                    File.Delete(currentPackageName[1] + ".exe");
                                     Environment.Exit(0);
                                 }
                                 Console.WriteLine("Installation Finished. No Error Reported.");
@@ -102,7 +103,7 @@ namespace winpac
                 }
                 if (args[0] == "-h" || args[0] == "--help")
                 {
-                    Console.WriteLine("Thanks for trying out WinPac, Here are some commands:\nwinpac --install: installs a specified package.\nwinpac --help: brings you here.\nwinpac --list: lists all packages.\nwinpac --version: tells your what version you are using.");
+                    Console.WriteLine("Thanks for trying out WinPac, Here are some commands:\nwinpac --install: installs a specified package.\nwinpac --help: brings you here.\nwinpac --list: lists all packages.\nwinpac --version: tells your what version you are using.\nwinpac --update: updates the current official packagelist.");
                 }
             }
             else Console.WriteLine("Type `winpac --help`, or `winpac -h`");
