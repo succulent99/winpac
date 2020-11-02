@@ -5,11 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Net;
+using System.Net.Sockets;
 
 namespace winpac
 {
     class Program
     {
+        static double currentVersion = 0.1;
         static void Main(string[] args)
         {
             if (!File.Exists("packagelist.txt"))
@@ -74,7 +76,7 @@ namespace winpac
                         }
                     }
                 }
-                if (args[0] == "-u" || args[0] == "--update")
+                if (args[0] == "-ul" || args[0] == "--updatelist")
                 {
                     Console.WriteLine("Downloading Latest Package List...");
                     try
@@ -89,6 +91,30 @@ namespace winpac
                     }
                     Console.WriteLine("Package List Update Completed.");
                 }
+                if (args[0] == "-u" || args[0] == "--update")
+                {
+                    Console.WriteLine("Finding latest version...");
+                    var client = new WebClient();
+                    if (File.Exists("winpacver"))
+                    {
+                        File.Delete("winpacver");
+                    }
+                    client.DownloadFile("https://winpac-mirror.succulent99.repl.co/winpacver", "winpacver");
+                    Console.WriteLine("Latest version found...");
+                    int updatableVersion = int.Parse(File.ReadAllText("winpacver"));
+                    if (currentVersion < updatableVersion)
+                    {
+                        Console.WriteLine("Update is needed...");
+                        Console.WriteLine("Downloading latest version...");
+                        client.DownloadFile("https://github.com/succulent99/winpac/releases/download/v0.2/winpacInstaller.exe", @"C:\Users\" + Environment.UserName + @"\Downloads\winpacUpdate.exe");
+                        System.Diagnostics.Process.Start(@"C:\Users\" + Environment.UserName + @"\Downloads\winpacUpdate.exe");
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        Console.WriteLine("No update required.");
+                    }
+                }
                 if (args[0] == "-l" || args[0] == "--list")
                 {
                     for (int i = 0; i < packages.Length; i++)
@@ -99,11 +125,11 @@ namespace winpac
                 }
                 if (args[0] == "-v" || args[0] == "--version")
                 {
-                    Console.WriteLine("Version: v0.1\nBranch: Debug");
+                    Console.WriteLine("Version: v" + currentVersion);
                 }
                 if (args[0] == "-h" || args[0] == "--help")
                 {
-                    Console.WriteLine("Thanks for trying out WinPac, Here are some commands:\nwinpac --install: installs a specified package.\nwinpac --help: brings you here.\nwinpac --list: lists all packages.\nwinpac --version: tells your what version you are using.\nwinpac --update: updates the current official packagelist.");
+                    Console.WriteLine("Thanks for trying out WinPac, Here are some commands:\nwinpac --install: installs a specified package.\nwinpac --help: brings you here.\nwinpac --list: lists all packages.\nwinpac --version: tells your what version you are using.\nwinpac --updatelist: updates the current official packagelist.");
                 }
             }
             else Console.WriteLine("Type `winpac --help`, or `winpac -h`");
